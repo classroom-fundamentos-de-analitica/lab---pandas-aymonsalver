@@ -99,7 +99,9 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    rta = tbl1["_c4"].sort_values().unique()
+    ans = [x.upper() for x in rta]
+    return ans
 
 
 def pregunta_07():
