@@ -86,7 +86,8 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    max = tbl0.groupby("_c1")["_c2"].max()
+    return max
 
 
 def pregunta_06():
