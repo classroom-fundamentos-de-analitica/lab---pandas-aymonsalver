@@ -176,7 +176,9 @@ def pregunta_10():
     otra=pd.DataFrame()
     otra["_c0"]= tbl0["_c1"]
     otra["_c1"]= tbl0["_c2"].astype(str)
-    rta = otra.groupby('_c0')['_c1'].apply(':'.join)
+    otra = otra.sort_values(by="_c1", ascending=True)
+    rta= pd.DataFrame()
+    rta["_c1"] = otra.groupby('_c0')['_c1'].apply(':'.join)
     return rta
 
 
