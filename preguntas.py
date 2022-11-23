@@ -198,7 +198,13 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    other = pd.DataFrame()
+    other["_c0"] = tbl1["_c0"]
+    other["_c4"] = tbl1["_c4"]
+    other = other.sort_values(by = "_c4", ascending=True)
+    ans = pd.DataFrame()
+    ans["_c4"] = other.groupby("_c0")["_c4"].apply(','.join)
+    return ans
 
 
 def pregunta_12():
