@@ -174,11 +174,11 @@ def pregunta_10():
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
     otra=pd.DataFrame()
-    otra["_c0"]= tbl0["_c1"]
-    otra["_c1"]= tbl0["_c2"].astype(str)
+    otra["_c1"]= tbl0["_c1"]
+    otra["_c2"]= tbl0["_c2"].astype(str)
     otra = otra.sort_values(by="_c1", ascending=True)
     rta= pd.DataFrame()
-    rta["_c1"] = otra.groupby('_c0')['_c1'].apply(':'.join)
+    rta["_c2"] = otra.groupby('_c0')['_c1'].apply(':'.join)
     return rta
 
 
