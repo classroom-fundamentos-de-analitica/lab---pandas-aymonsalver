@@ -173,7 +173,11 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+    otra=pd.DataFrame()
+    otra["_c0"]= tbl0["_c1"]
+    otra["_c1"]= tbl0["_c2"].astype(str)
+    rta = otra.groupby('_c0')['_c1'].apply(':'.join)
+    return rta
 
 
 def pregunta_11():
