@@ -52,7 +52,7 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    letra = tbl0["_c1"].value_counts()
+    letra = tbl0["_c1"].value_counts
     return letra
 
 
