@@ -219,7 +219,12 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    tbl2['_c5b'] = tbl2['_c5b'].map(str)
+    tbl2['_c5'] = tbl2['_c5a'] + ":" + tbl2['_c5b']
+    tabla = tbl2.pivot_table(values="_c5",index="_c0",aggfunc=sorted)
+    tabla['_c5'] = tabla['_c5'].map(",".join)
+    tabla = tabla.reset_index()
+    return tabla
 
 
 def pregunta_13():
