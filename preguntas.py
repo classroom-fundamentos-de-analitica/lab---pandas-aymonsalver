@@ -198,13 +198,10 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    other = pd.DataFrame()
-    other["_c0"] = tbl1["_c0"]
-    other["_c4"] = tbl1["_c4"]
-    other = other.sort_values(by = "_c4", ascending=True)
-    ans = pd.DataFrame()
-    ans["_c4"] = other.groupby("_c0")["_c4"].apply(','.join)
-    return ans
+    other = tbl1.pivot_table(values="_c4",index="_c0",aggfunc=sorted)
+    other['_c4'] = other['_c4'].map(",".join)
+    other = other.reset_index()
+    return other
 
 
 def pregunta_12():
