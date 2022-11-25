@@ -241,4 +241,5 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    nuevaTabla = pd.merge(tbl2,tbl0,on="_c0")
+    return nuevaTabla.groupby('_c1')['_c5b'].sum()
